@@ -24,7 +24,7 @@ class Solution:
         for ind1, val in enumerate(nums):
             try:
                 ind2 = nums.index(target - val)
-                return ind1+1, ind2+1
+                return (ind1, ind2)
             except ValueError:
                 continue
 
@@ -32,7 +32,7 @@ class Solution:
         nums = num
         for ind1, val in enumerate(nums):
             if target-val in nums:
-                return ind1+1, nums.index(target-val)+1
+                return ind1, nums.index(target-val)
 
     def twoSum(self, num, target):
         """
@@ -50,7 +50,7 @@ class Solution:
             if target-val in hash_map:
                 ind2 = hash_map[target-val]
                 if ind1!=ind2:
-                    return ind1+1, ind2+1
+                    return ind1, ind2
 
     def two_sum_on(self, nums, target):
         hash_map = {}
